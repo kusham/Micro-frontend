@@ -1,13 +1,16 @@
-import faker from 'faker'
+import faker from "faker";
 
-let products = ''
+const mount = (el) => {
+  let products = "";
 
-for (let index = 0; index < 30; index++) {
-   
+  for (let index = 0; index < 30; index++) {
     const name = faker.commerce.productName();
-    products += `<div>${name}</div>`
-}
+    products += `<div>${name}</div>`;
+  }
 
+  el.innerHTML = products;
+  console.log(products);
+};
 
-document.querySelector('#dev-products').innerHTML = products;
-console.log(products); 
+export { mount };
+// context/situation #1
